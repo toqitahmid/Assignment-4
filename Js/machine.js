@@ -7,7 +7,7 @@ function setInterviewButton(card) {
   parentApplied.innerHTML = "";
   const appliedButton = document.createElement("button");
   appliedButton.innerText = "INTERVIEWD";
-  appliedButton.className = "btn btn-default w-30";
+  appliedButton.className = "btn btn-outline w-30";
 
   parentApplied.appendChild(appliedButton);
 }
@@ -16,7 +16,7 @@ function setRejectButton(card) {
   parentApplied.innerHTML = "";
   const appliedButton = document.createElement("button");
   appliedButton.innerText = "RIJECTED";
-  appliedButton.className = "btn btn-default w-30";
+  appliedButton.className = "btn btn-outline w-30";
 
   parentApplied.appendChild(appliedButton);
 }
