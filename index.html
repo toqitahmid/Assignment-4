@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="body-container">
+    <header class="container header-section">
+        <h1 class="font-bold">Job Application Tracker</h1>
+        <div class="tracker-cards">
+            <div class="card">
+                <p class="card-item">Total</p>
+                <p class="card-item card-number" id="total-state">0</p>
+            </div>
+            <div class="card">
+                <p class="card-item">Interview</p>
+                <p class="card-item card-number" id="interview-state">0</p>
+            </div>
+            <div class="card">
+                <p class="card-item">Rejected</p>
+                <p class="card-item card-number" id="rejected-state">0</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <main class="container">
+        <div class="jobs-header">
+            <div>
+                <h2>Available Jobs</h2>
+            </div>
+            <div>
+                <p><span  id="variable-no">8</span> Jobs</p>
+            </div>
+        </div>
+
+        <div class="btns">
+            <button id="tab-all" onclick="switchTab('all-jobs'); countAllJobTabs('all-jobs')" class="btn w-25 rounded-md btn-outline text-black">All</button>
+            <button id="tab-interview" onclick="switchTab('interview-section'); countInterviewTabs('interview-section')" class="btn w-30 rounded-md btn-outline btn-secondary text-black">Interview</button>
+            <button id="tab-rejected" onclick="switchTab('rejected-section'); countRjectedTabs('rejected-section')" class="btn w-30 rounded-md btn-outline btn-warning text-black">Rejected</button>
+        </div>
+
+        <div id="all-jobs" class="job-section">
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">Mobile First Corp</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">Remote • Full-time • $130,000 - $175,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Build cross-platform mobile applications using React Native. Work on products used by
+                    millions of users worldwide.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">WebFlow Agency</h2>
+                <p>Web Designer & Developer</p>
+                <br>
+                <p class="selary">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Create stunning web experiences for high-profile clients. Must have portfolio and
+                    experience with
+                    modern web design trends.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">DataViz Solutions</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">Boston, MA
+                    •
+                    Full-time
+                    •
+                    $125,000 - $165,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Transform complex data into compelling visualizations. Required skills: D3.js, React,
+                    and strong analytical thinking.
+                </p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">CloudFirst Inc</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">Seattle, WA
+                    •
+                    Full-time
+                    •
+                    $140,000 - $190,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Design and maintain scalable backend systems using Python and AWS. Work with modern
+                    DevOps practices and cloud infrastructure.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">Innovation Labs</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">Austin, TX
+                    •
+                    Full-time
+                    •
+                    $110,000 - $150,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Create beautiful and functional user interfaces for our suite of products. Strong
+                    design skills and frontend development expertise required.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">MegaCorp Solutions</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">New York, NY
+                    •
+                    Full-time
+                    •
+                    $130,000 - $170,00</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Build enterprise applications with JavaScript and modern frameworks. We offer
+                    competitive compensation, health insurance, and professional development opportunities.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div  class="interview-card rejected-card job-card rounded-md">
+                <h2 class="text-3xl font-bold">StartupXYZ</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">Remote
+                    •
+                    Full-time
+                    •
+                    $120,000 - $160,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">Join our fast-growing startup and work on our core platform. Experience with Node.js
+                    and React required. Great benefits and equity package included.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+            <div id="interviewCard-8" class="job-card rounded-md">
+                <h2 class="text-3xl font-bold">TechCorp Industries</h2>
+                <p>React Native Developer</p>
+                <br>
+                <p class="selary">San Francisco, CA
+                    •
+                    Full-time
+                    •
+                    $130,000 - $175,000</p>
+                <button class="btn w-30 rounded-md btn-outline text-black">NOT APPLIED</button>
+                <p class="selary">We are looking for an experienced Frontend Developer to build scalable web
+                    applications using React and TypeScript. You will work with a talented team on cutting-edge
+                    projects.</p>
+                <button class="interview-btn btn w-30 rounded-md btn-outline btn-secondary text-black">INTERVIEW</button>
+                <button class="rejected-btn btn w-30 rounded-md btn-outline btn-warning text-black">REJECTED</button>
+            </div>
+        </div>
+
+        <div id="interview-section" class="container hidden">
+
+            <div id="interview-job" class="no-jobs">
+                <div><img src="./resource/jobs.png" alt=""></div>
+                <div>
+                    <h2 class="font-bold text-xl">No interview available</h2>
+                    <p>Check back soon for new job opportunities</p>
+                </div>
+            </div>
+        </div>
+        <div id="rejected-section" class="container hidden">
+
+            <div id="rejected-job" class="no-jobs">
+                <div><img src="./resource/jobs.png" alt=""></div>
+                <div>
+                    <h2 class="font-bold text-xl">No rejected jobs available</h2>
+                    <p>Check back soon for new job opportunities</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./Js/switchTab.js"></script>
+    <script src="./Js/interviewButton.js"></script>
+    <script src="./Js/rejectedButton.js"></script>
+    <script src="./Js/filtering.js"></script>
+    <script src="./Js/machine.js"></script>
+</body>
+
+</html>
